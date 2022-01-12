@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="header" style="text-align:center;">
+	<!-- <h1 style="text-transform: uppercase;">Github Repository Browsing Tool</h1> -->
+	<p style="font-size:50px;">
+	Github Repository Browsing Tool
+	</p>
+</div>
+
+<div class="content" style="text-align:center; margin:200px; ">
+           <p style="font-size:30px;">
+           Hello
+           {% if github_login %}
+              {{ github_login.extra_data.login }}!
+           {% else %}
+           {% endif %}
+           </p>
+	{% if github_login %}
+           <a href="{{ app_url }}/repos/">
+           <p style="font-size:20px;">Github Info</p>
+           </a>
+	{% else %}
+           <a href="{{ app_url }}/login/"><p>Login to Github</p></a>
+	{% endif %}
+</div>
+
+<div id="footer" style="text-align:center;">
+Created by <a href="https://www.github.com/ShriramK">Shriram</a>&nbsp;,
+Source code at <a href="https://github.com/ShriramK">link-to-the-github-repo</a>.
+</div>
+{% endblock %}
